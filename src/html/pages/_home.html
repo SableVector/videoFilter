@@ -1,8 +1,329 @@
 <!-- === PAGE === -->
 <main class="page">
-    <section class="page__intro intro">
-        <div class="intro__container">
-            MAIN
-        </div>
-    </section>
+    <div class="page__container">
+        <aside class="page__aside aside">
+            <ul class="aside__list">
+                <li class="aside__item">
+                    <h2 class="aside__title">Жанры</h2>
+                    <ul class="aside__checkboxes checkboxes">
+                        <li class="checkboxes__item">
+                            <div class="checkbox">
+                                <input class="checkbox__input" id="c_Action" type="checkbox" name="путку-Action"
+                                    value="Action">
+                                <label class="checkbox__label" for="c_Action"><span
+                                        class="checkbox__text">Action</span></label>
+                            </div>
+                        </li>
+                        <li class="checkboxes__item">
+
+                            <div class="checkbox">
+                                <input class="checkbox__input" id="c_Adventure" type="checkbox" name="путку-Adventure"
+                                    value="Adventure">
+                                <label class="checkbox__label" for="c_Adventure"><span
+                                        class="checkbox__text">Adventure</span></label>
+                            </div>
+                        </li>
+                        <li class="checkboxes__item">
+
+                            <div class="checkbox">
+                                <input class="checkbox__input" id="c_Fantasy" type="checkbox" name="путку-Fantasy"
+                                    value="Fantasy">
+                                <label class="checkbox__label" for="c_Fantasy"><span
+                                        class="checkbox__text">Fantasy</span></label>
+                            </div>
+                        </li>
+                        <li class="checkboxes__item">
+
+                            <div class="checkbox">
+                                <input class="checkbox__input" id="c_Drama" type="checkbox" name="путку-Drama"
+                                    value="Drama">
+                                <label class="checkbox__label" for="c_Drama"><span
+                                        class="checkbox__text">Drama</span></label>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="aside__item">
+                    <h2 class="aside__title">По году</h2>
+                    <ul class="aside__checkboxes checkboxes">
+                        <li class="checkboxes__item">
+                            <div class="checkbox">
+                                <input class="checkbox__input" id="c_2015" type="checkbox" name="year-2015"
+                                    value="2015">
+                                <label class="checkbox__label" for="c_2015"><span
+                                        class="checkbox__text">2015</span></label>
+                            </div>
+                        </li>
+                        <li class="checkboxes__item">
+                            <div class="checkbox">
+                                <input class="checkbox__input" id="c_2016" type="checkbox" name="year-2016"
+                                    value="2016">
+                                <label class="checkbox__label" for="c_2016"><span
+                                        class="checkbox__text">2016</span></label>
+                            </div>
+                        </li>
+                        <li class="checkboxes__item">
+                            <div class="checkbox">
+                                <input class="checkbox__input" id="c_2017" type="checkbox" name="year-2017"
+                                    value="2017">
+                                <label class="checkbox__label" for="c_2017"><span
+                                        class="checkbox__text">2017</span></label>
+                            </div>
+                        </li>
+                        <li class="checkboxes__item">
+                            <div class="checkbox">
+                                <input class="checkbox__input" id="c_2018" type="checkbox" name="year-2018"
+                                    value="2018">
+                                <label class="checkbox__label" for="c_2018"><span
+                                        class="checkbox__text">2018</span></label>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="aside__item">
+                    <h2 class="aside__title">По стране</h2>
+                    <ul class="aside__checkboxes checkboxes">
+                        <li class="checkboxes__item">
+                            <div class="checkbox">
+                                <input class="checkbox__input" id="c_USA" type="checkbox" name="country-USA"
+                                    value="USA">
+                                <label class="checkbox__label" for="c_USA"><span
+                                        class="checkbox__text">USA</span></label>
+                            </div>
+                        </li>
+                        <li class="checkboxes__item">
+                            <div class="checkbox">
+                                <input class="checkbox__input" id="c_UK" type="checkbox" name="country-UK" value="UK">
+                                <label class="checkbox__label" for="c_UK"><span class="checkbox__text">UK</span></label>
+                            </div>
+                        </li>
+                    </ul>
+                <li class="aside__item">
+                    <h2 class="aside__title">По языку</h2>
+                    <ul class="aside__checkboxes checkboxes">
+                        <li class="checkboxes__item">
+                            <div class="checkbox">
+                                <input class="checkbox__input" id="c_English" type="checkbox" name="language-English"
+                                    value="English">
+                                <label class="checkbox__label" for="c_English"><span
+                                        class="checkbox__text">English</span></label>
+                            </div>
+                        </li>
+                        <li class="checkboxes__item">
+                            <div class="checkbox">
+                                <input class="checkbox__input" id="c_Norse" type="checkbox" name="language-Norse"
+                                    value="Norse">
+                                <label class="checkbox__label" for="c_Norse"><span
+                                        class="checkbox__text">Norse</span></label>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </aside>
+        <section class="page__content content">
+            <div class="content__search">
+                <form class="search" action="#">
+                    <div class="search__input">
+                        <input class="input" autocomplete="off" type="text" name="form[search]" data-error="Ошибка"
+                            placeholder="Введите название фильма">
+                    </div>
+                    <button class="search__btn" type="submit">
+                        <svg>
+                            <use xlink:href="img/symbol/icons.svg#search"></use>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+            <ul class="content__list">
+                <li class="content__item">
+                    <a class="movie-card" href="#">
+                        <div class="movie-card__img" style="background-image: url(@img/poster/poster-02.jpg);"></div>
+                        <span class="movie-card__rating">7.7</span>
+                        <div class="movie-card__info info-card">
+                            <div class="info-card__header">
+                                <h3 class="info-card__title">Доктор Стрэндж: В мультивселенной безумия</h3>
+                            </div>
+                            <div class="info-card__body">
+                                <span class="info-card__runtime">
+                                    <svg>
+                                        <use xlink:href="img/symbol/icons.svg#time"></use>
+                                    </svg>
+                                    126 мин.
+                                </span>
+                                <span class="info-card__country">США</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="content__item">
+                    <a class="movie-card" href="#">
+                        <div class="movie-card__img" style="background-image: url(@img/poster/poster-03.jpg);"></div>
+                        <span class="movie-card__rating">7.7</span>
+                        <div class="movie-card__info info-card">
+                            <div class="info-card__header">
+                                <h3 class="info-card__title">Скорая</h3>
+                            </div>
+                            <div class="info-card__body">
+                                <span class="info-card__runtime">
+                                    <svg>
+                                        <use xlink:href="img/symbol/icons.svg#time"></use>
+                                    </svg>
+                                    136 мин.
+                                </span>
+                                <span class="info-card__country">США</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="content__item">
+                    <a class="movie-card" href="#">
+                        <div class="movie-card__img" style="background-image: url(@img/poster/poster-02.jpg);"></div>
+                        <span class="movie-card__rating">7.7</span>
+                        <div class="movie-card__info info-card">
+                            <div class="info-card__header">
+                                <h3 class="info-card__title">Доктор Стрэндж: В мультивселенной безумия</h3>
+                            </div>
+                            <div class="info-card__body">
+                                <span class="info-card__runtime">
+                                    <svg>
+                                        <use xlink:href="img/symbol/icons.svg#time"></use>
+                                    </svg>
+                                    126 мин.
+                                </span>
+                                <span class="info-card__country">США</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="content__item">
+                    <a class="movie-card" href="#">
+                        <div class="movie-card__img" style="background-image: url(@img/poster/poster-02.jpg);"></div>
+                        <span class="movie-card__rating">7.7</span>
+                        <div class="movie-card__info info-card">
+                            <div class="info-card__header">
+                                <h3 class="info-card__title">Доктор Стрэндж: В мультивселенной безумия</h3>
+                            </div>
+                            <div class="info-card__body">
+                                <span class="info-card__runtime">
+                                    <svg>
+                                        <use xlink:href="img/symbol/icons.svg#time"></use>
+                                    </svg>
+                                    126 мин.
+                                </span>
+                                <span class="info-card__country">США</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="content__item">
+                    <a class="movie-card" href="#">
+                        <div class="movie-card__img" style="background-image: url(@img/poster/poster-02.jpg);"></div>
+                        <span class="movie-card__rating">7.7</span>
+                        <div class="movie-card__info info-card">
+                            <div class="info-card__header">
+                                <h3 class="info-card__title">Доктор Стрэндж: В мультивселенной безумия</h3>
+                            </div>
+                            <div class="info-card__body">
+                                <span class="info-card__runtime">
+                                    <svg>
+                                        <use xlink:href="img/symbol/icons.svg#time"></use>
+                                    </svg>
+                                    126 мин.
+                                </span>
+                                <span class="info-card__country">США</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="content__item">
+                    <a class="movie-card" href="#">
+                        <div class="movie-card__img" style="background-image: url(@img/poster/poster-02.jpg);"></div>
+                        <span class="movie-card__rating">7.7</span>
+                        <div class="movie-card__info info-card">
+                            <div class="info-card__header">
+                                <h3 class="info-card__title">Доктор Стрэндж: В мультивселенной безумия</h3>
+                            </div>
+                            <div class="info-card__body">
+                                <span class="info-card__runtime">
+                                    <svg>
+                                        <use xlink:href="img/symbol/icons.svg#time"></use>
+                                    </svg>
+                                    126 мин.
+                                </span>
+                                <span class="info-card__country">США</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="content__item">
+                    <a class="movie-card" href="#">
+                        <div class="movie-card__img" style="background-image: url(@img/poster/poster-02.jpg);"></div>
+                        <span class="movie-card__rating">7.7</span>
+                        <div class="movie-card__info info-card">
+                            <div class="info-card__header">
+                                <h3 class="info-card__title">Доктор Стрэндж: В мультивселенной безумия</h3>
+                            </div>
+                            <div class="info-card__body">
+                                <span class="info-card__runtime">
+                                    <svg>
+                                        <use xlink:href="img/symbol/icons.svg#time"></use>
+                                    </svg>
+                                    126 мин.
+                                </span>
+                                <span class="info-card__country">США</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="content__item">
+                    <a class="movie-card" href="#">
+                        <div class="movie-card__img" style="background-image: url(@img/poster/poster-02.jpg);"></div>
+                        <span class="movie-card__rating">7.7</span>
+                        <div class="movie-card__info info-card">
+                            <div class="info-card__header">
+                                <h3 class="info-card__title">Доктор Стрэндж: В мультивселенной безумия</h3>
+                            </div>
+                            <div class="info-card__body">
+                                <span class="info-card__runtime">
+                                    <svg>
+                                        <use xlink:href="img/symbol/icons.svg#time"></use>
+                                    </svg>
+                                    126 мин.
+                                </span>
+                                <span class="info-card__country">США</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="content__item">
+                    <a class="movie-card" href="#">
+                        <div class="movie-card__img" style="background-image: url(@img/poster/poster-02.jpg);"></div>
+                        <span class="movie-card__rating">7.7</span>
+                        <div class="movie-card__info info-card">
+                            <div class="info-card__header">
+                                <h3 class="info-card__title">Доктор Стрэндж: В мультивселенной безумия</h3>
+                            </div>
+                            <div class="info-card__body">
+                                <span class="info-card__runtime">
+                                    <svg>
+                                        <use xlink:href="img/symbol/icons.svg#time"></use>
+                                    </svg>
+                                    126 мин.
+                                </span>
+                                <span class="info-card__country">США</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <div class="content__pagination pagination">
+                <button class="pagination__btn">1</button>
+                <button class="pagination__btn">2</button>
+                <button class="pagination__btn">3</button>
+                <span class="pagination__dots">...</span>
+                <button class="pagination__btn">11</button>
+            </div>
+        </section>
+    </div>
 </main>

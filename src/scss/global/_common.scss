@@ -1,1 +1,114 @@
 /* === Общие стили переиспользованных блоков */
+.header-card {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    overflow: hidden;
+
+    @media (any-hover: hover) {
+        &:hover {
+            .header-card__img {
+                transform: scale(1.02);
+            }
+
+            .header-card__title {
+                background-color: rgba(250, 250, 250, 0.3);
+            }
+        }
+    }
+    // .header-card__img
+    &__img {
+        @include transition(transform);
+
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        min-height: rem(200);
+    }
+    // .header-card__title
+    &__title {
+        @include transition(background-color);
+
+        font-size: rem(14);
+        font-weight: $fw-bold;
+        color: #fff;
+        background-color: rgba(250, 250, 250, 0.2);
+        width: 100%;
+        padding: rem(5) rem(10);
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        pointer-events: none;
+    }
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    margin: 0 rem(10);
+    font-size: rem(18);
+    // .pagination__btn
+    &__btn {
+        @include reset-btn;
+        @include transition(background-color);
+
+        border-radius: rem(5);
+        padding: rem(10);
+
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: $color-main;
+            }
+        }
+    }
+    // .pagination__dots
+    &__dots {
+        letter-spacing: rem(2);
+    }
+}
+
+.search {
+    position: relative;
+    // .search__input
+    &__input {
+    }
+    // .search__btn
+    &__btn {
+        @include reset-btn;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        width: rem(30);
+        height: 100%;
+
+        svg {
+            width: rem(14);
+            height: rem(14);
+            fill: $color-text;
+        }
+    }
+}
+
+.input {
+    @include transition(all);
+
+    padding: rem(10) rem(10) rem(10) rem(30);
+    width: 100%;
+    border-radius: rem(5);
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    outline: none;
+    border: rem(1) solid transparent;
+
+    &:focus {
+        box-shadow: 0 0 rem(10) rem(10) rgba(250, 250, 250, 0.2);
+        border: rem(1) solid $color-grey;
+    }
+}

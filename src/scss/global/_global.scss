@@ -11,9 +11,10 @@
 body {
     font-family: $font-family-main;
     font-size: $size-text;
-    font-weight: $fw-light;
+    font-weight: $fw-regular;
     line-height: $line-height;
     color: $color-text;
+    background: #e2e2e2 url(../img/bg.jpg) center center/cover no-repeat fixed;
 
     // Скролл заблокирован
     .lock & {

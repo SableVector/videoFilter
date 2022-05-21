@@ -2,39 +2,42 @@
 
 //Подключение шрифтов
 //&display=swap - для подключение через плагин VSC
+@import url(https://fonts.googleapis.com/css?family=Montserrat:regular,700&display=swap);
+
 // Смена PX на REM ========================
 // Для включения относительных единиц rem, все измерения должны приводиться в таком виде $b*n где n - значение в пикселях деленное на 2.
 $b: 2px;
 // $b: rem(2px);
 
 // Переменные шрифтов========================
-$font-family-main: "Ubuntu", helvetica, sans-serif; // Семейство шрифта по умолчанию
+$font-family-main: "Montserrat", helvetica, sans-serif; // Семейство шрифта по умолчанию
 // $font-family-help: "Urbanist", helvetica, sans-serif;
 
 $size-text: $b * 8;
 $line-height: calc(22 / 16) * 100%; // Первое - высота строка, второе - размер шрифта
 // $fw-thin: 100;
-$fw-light: 300; // по умолчанию
-// $fw-regular: 400;
+// $fw-light: 300;
+$fw-regular: 400; // по умолчанию
 // $fw-medium: 500;
 // $fw-semiBold: 600;
-// $fw-bold: 700;
+$fw-bold: 700;
 // $fw-black: 900;
 
 // Переменные цвета ========================
-$color-text: #000; //Цвет текста по умолчанию
-// $color-main: #a36c22;
+$color-text: #2e2e2e; //Цвет текста по умолчанию
+$color-main: #4a5455;
+$color-secondary: #677d74;
+$color-help: #a2a599;
+$color-light: #cdc6c3;
+$color-grey: #aaafa8;
+$color-warning: #f68038;
 // $color-main-dark: #6f2205;
-// $color-light: #eacc97;
 // $color-sky: #93b0d0;
 // $color-error: red;
 // $color-success: green;
 // $color-orange: #e8aa31;
-// $color-help: #009ffd;
-// $color-secondary: #f68038;
 // $color-white: #fff;
 // $color-dark: #0f0f0f;
-// $color-warning: #f68038;
 // $color-danger: #f68038;
 // $color-success: #f68038;
 

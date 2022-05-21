@@ -1,1 +1,49 @@
 /* === HEADER === */
+.header {
+    &:not(:last-child) {
+    margin-bottom: rem(20);
+    }
+    // .header__container
+    &__container {
+    }
+    // .header__body
+    &__body {
+        padding: rem(15) rem(15) 0;
+    }
+}
+.body-header {
+    // .body-header__title
+    &__title {
+        font-size: rem(22);
+        padding: rem(10);
+        display: inline-block;
+        border-top-left-radius: rem(5);
+        border-top-right-radius: rem(5);
+        color: #fff;
+        background-color: $color-secondary;
+        border-bottom: rem(1) solid #000;
+
+        &:not(:last-child) {
+            margin-bottom: rem(10);
+        }
+    }
+    // .body-header__content
+    &__content {
+        border-radius: rem(5);
+        background-color: $color-help;
+        padding: rem(15);
+    }
+}
+.content-header {
+    // .content-header__list
+    &__list {
+        display: flex;
+        align-items: flex-start;
+        gap: rem(10);
+        overflow: auto;
+    }
+    // .content-header__item
+    &__item {
+        flex: 0 0 rem(150);
+    }
+}
