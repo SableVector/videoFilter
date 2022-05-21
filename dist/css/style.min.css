@@ -273,6 +273,7 @@ a {
   align-items: center;
   margin: 0 0.625rem;
   font-size: 1.125rem;
+  color: #cdc6c3;
 }
 .pagination__btn {
   text-align: center;
@@ -286,6 +287,7 @@ a {
   transition: background-color 0.3s ease-in-out;
   border-radius: 0.3125rem;
   padding: 0.625rem;
+  color: inherit;
 }
 @media (any-hover: hover) {
   .pagination__btn:hover {

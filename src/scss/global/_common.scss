@@ -48,6 +48,7 @@
     align-items: center;
     margin: 0 rem(10);
     font-size: rem(18);
+    color: $color-light;
     // .pagination__btn
     &__btn {
         @include reset-btn;
@@ -55,6 +56,7 @@
 
         border-radius: rem(5);
         padding: rem(10);
+        color: inherit;
 
         @media (any-hover: hover) {
             &:hover {
