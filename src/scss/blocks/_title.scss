@@ -1,0 +1,4 @@
+/* === TITLE === */
+.title {
+    @include adaptiveValue("font-size", 30, 18);
+}

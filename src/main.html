@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/blocks/_head.html', {
+"title": "Главная страница сайта"
+})
+
+<body>
+	<div class="wrapper">
+		<!-- === HEADER === -->
+		@@include('html/blocks/_header.html',{
+			"activeClass_01": "menu__link",
+			"activeClass_02": "menu__link",
+			"activeClass_03": "menu__link",
+			"activeClass_04": "menu__link",
+			"activeClass_05": "menu__link",
+		})
+		<!-- === MAIN === -->
+		@@include('html/pages/_home.html',{})
+		<!-- === FOOTER === -->
+		@@include('html/blocks/_footer.html',{})
+	</div>
+
+	<!-- === POPUP === -->
+	<!-- @@include('html/blocks/_popup.html',{}) -->
+</body>
+
+</html>

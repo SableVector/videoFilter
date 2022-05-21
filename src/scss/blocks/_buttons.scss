@@ -1,0 +1,18 @@
+/* === BUTTONS === */
+.button {
+    @include reset-btn;
+    @include transition(all);
+
+    &:focus {
+    }
+
+    &:disabled {
+    }
+
+    &:active {
+    }
+
+    &._fw {
+        width: 100%;
+    }
+}

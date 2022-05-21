@@ -1,0 +1,26 @@
+/* === FUNCTIONS === */
+@use 'sass:math';
+
+// Функция преобразования px в rem
+$root-font-size: 16px;
+
+@function rem($px) {
+    $result: math.div($px, 16) + rem;
+
+    @return $result;
+}
+
+@function em($px) {
+    $result: math.div($px, 16) + em;
+
+    @return $result;
+}
+
+html {
+    font-size: calc($root-font-size / 16px) * 100%;
+}
+
+// Функция подсчета процентов
+@function procent($px, $from) {
+    @return calc($px / $from) * 100%;
+}

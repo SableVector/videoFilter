@@ -1,0 +1,152 @@
+@charset "UTF-8";
+/* stylelint scss/dollar-variable-pattern: [/^foo-/, {"ignore": "global"}] */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* === FUNCTIONS === */
+html {
+  font-size: 100%;
+}
+
+/* === GLOBAL STYLES === */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Ubuntu", helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 137.5%;
+  color: #000;
+}
+.lock body {
+  overflow: hidden;
+  touch-action: none;
+}
+a {
+  font-family: "Ubuntu", helvetica, sans-serif;
+  color: inherit;
+  text-decoration: none;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.footer {
+  margin-top: auto;
+}
+
+[class*=__container] {
+  max-width: 1140px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+[class*=-ibg] {
+  position: relative;
+}
+[class*=-ibg] img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+[class*=-ibg_contain] img {
+  object-fit: contain;
+}
+
+/* === page === */
+/* === TITLE === */
+@supports (font-size: clamp( 1.125rem , 0.8323170732rem + 1.4634146341vw , 1.875rem )) {
+  .title {
+    font-size: clamp( 1.125rem , 0.8323170732rem + 1.4634146341vw , 1.875rem );
+  }
+}
+@supports not (font-size: clamp( 1.125rem , 0.8323170732rem + 1.4634146341vw , 1.875rem )) {
+  .title {
+    font-size: calc(
+            1.125rem + 0.75 * (100vw - 20rem) / 51.25
+        );
+  }
+}
+
+/* === BUTTONS === */
+.button {
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  vertical-align: top;
+  cursor: pointer;
+  user-select: none;
+  background-color: transparent;
+  border: 0;
+  transition: all 0.3s ease-in-out;
+}
+.button._fw {
+  width: 100%;
+}
+
+/* === HEADER === */
+/* === FOOTER === */
+/* === Общие стили переиспользованных блоков */
+/* ===INTRO=== */

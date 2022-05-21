@@ -1,0 +1,65 @@
+/* === SPOLLERS === */
+
+// Сниппет (HTML): spoller
+
+// Блок со спойлерами
+.spollers {
+    display: grid;
+    gap: $b * 7;
+}
+
+// Спойлер
+.spollers__item {
+    font-size: rem(20);
+}
+
+// Заголовок спойлера
+.spollers__title {
+    position: relative;
+    width: 100%;
+    padding: $b * 5 $b * 7.5;
+    text-align: left;
+    cursor: default;
+    border: 1px solid #eee;
+    border-radius: $b * 2.5;
+
+    ._spoller-init & {
+        cursor: pointer;
+
+        &::before,
+        &::after {
+            position: absolute;
+            top: 50%;
+            right: $b * 5;
+            width: $b * 7.5;
+            height: $b;
+            content: "";
+            background-color: #000;
+            transition: transform 0.5s ease 0s;
+        }
+
+        &::before {
+            transform: translate(-75%, -50%) rotate(40deg);
+        }
+
+        &::after {
+            transform: translate(0, -50%) rotate(-40deg);
+        }
+
+        &._spoller-active {
+            &::before {
+                transform: translateX(-75%) rotate(-40deg);
+            }
+
+            &::after {
+                transform: rotate(40deg);
+            }
+        }
+    }
+}
+// Контент спойлера
+.spollers__body {
+    padding: $b * 10;
+    border: 1px solid #eee;
+    border-radius: $b * 2.5;
+}

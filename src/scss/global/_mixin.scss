@@ -1,0 +1,141 @@
+// === MIXINS ===
+@use "sass:math";
+
+// Подключение шрифтов
+@mixin font($font_name, $file_name, $weight, $style) {
+    @font-face {
+        font-family: $font_name;
+        font-style: #{$style};
+        font-weight: #{$weight};
+        src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
+        font-display: swap;
+    }
+}
+
+// Адаптивное свойство
+@mixin adaptiveValue($property, $startSize, $minSize, $widthFrom: $md1, $widthTo: $minWidth, $keepSize: 0) {
+    @if $startSize==0 {
+        $startSize: 0.000001;
+    }
+
+    @if $minSize==0 {
+        $minSize: 0.000001;
+    }
+
+    // Для calc();
+    $addSize: math.div($startSize - $minSize, 16);
+
+    @if $widthFrom == $md1 and $maxWidthContainer == 0 {
+        $widthFrom: $maxWidth;
+    }
+
+    // Брейк-поинты в EM
+    $widthFromMedia: em($widthFrom);
+    $widthToMedia: em($widthTo);
+
+    // Формула плавающего значения
+    // Источник: https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+    $slope: math.div(($startSize - $minSize), ($widthFrom - $widthTo));
+    $yIntersection: -$widthTo * $slope + $minSize;
+
+    @if $yIntersection==0 {
+        $yIntersection: 0.000001;
+    }
+    $flyValue: #{rem($yIntersection)} "+" #{$slope * 100}vw;
+
+    // Получение значения свойства
+    $propertyValue: #{"clamp(" rem($minSize) "," $flyValue "," rem($startSize) ")"};
+
+    // Если отрицательные значения
+    @if $minSize > $startSize {
+        $propertyValue: #{"clamp(" rem($startSize) "," $flyValue "," rem($minSize) ")"};
+    }
+
+    // Если поддерживается clamp();
+    @supports (#{$property}: $propertyValue) {
+        #{$property}: $propertyValue;
+    }
+
+    // Если не поддерживается clamp();
+    @supports not (#{$property}: $propertyValue) {
+        #{$property}: calc(
+            #{rem($minSize)} + #{$addSize} * (100vw - #{rem($widthTo)}) / #{math.div($widthFrom, 16) -
+                math.div($widthTo, 16)}
+        );
+    }
+
+    // // Устанавливаем значения по умолчанию
+    // @if $widthFrom != $containerWidth and $widthFrom != $maxWidth and $keepSize != 1 and $keepSize != 2 {
+    //     @media (min-width: $widthFromMedia) {
+    //         #{$property}: inherit;
+    //     }
+    // }
+
+    // @if $widthTo != $minWidth and $keepSize != 1 and $keepSize != 3 {
+    //     @media (max-width: $widthToMedia) {
+    //         #{$property}: inherit;
+    //     }
+    // }
+}
+
+// Безопастное переполнение текстового блока
+@mixin text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// Подсветка интерактивного блока
+@mixin focus {
+    border-radius: 2px;
+    outline: 2px solid $color-help;
+    outline-offset: 2px;
+}
+
+// Подсветка родительского блока содержащего интерактивные блоки
+@mixin focus-within {
+    &:focus-within {
+        @include focus;
+    }
+}
+
+// Сброс стандартных стилей кнопок
+@mixin reset-btn {
+    text-align: center;
+    text-decoration: none;
+    text-transform: none;
+    vertical-align: top;
+    cursor: pointer;
+    user-select: none;
+    background-color: transparent;
+    border: 0;
+}
+
+// Плавность анимации
+@mixin transition($property) {
+    transition: $property 0.3s ease-in-out;
+}
+
+// Скрыть объект со страницы
+@mixin visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    border: 0;
+}
+
+// ==================================================
+
+// Анимация
+@mixin animate($name, $duration: 0.4s, $delay: 0s) {
+    visibility: hidden;
+
+    ._animate & {
+        visibility: visible;
+        animation: $name $duration ease-in-out $delay;
+    }
+}
